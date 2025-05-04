@@ -1,0 +1,1026 @@
+[
+    {
+        "id": "a77dd866abe5aa76",
+        "type": "tab",
+        "label": "MQTT-Based-Plant-Watering",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3d27513303f490c2",
+        "type": "mqtt in",
+        "z": "a77dd866abe5aa76",
+        "name": "",
+        "topic": "plant1-moisture",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "c64421d17c651a0d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 140,
+        "wires": [
+            [
+                "cd4e92d99cd2eb7f"
+            ]
+        ]
+    },
+    {
+        "id": "cd4e92d99cd2eb7f",
+        "type": "ui-gauge",
+        "z": "a77dd866abe5aa76",
+        "name": "Moisture",
+        "group": "bb0c6cf828f37306",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Moisture",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#d65c5c"
+            },
+            {
+                "from": "35",
+                "color": "#00ff2a"
+            },
+            {
+                "from": "85",
+                "color": "#ea5353"
+            },
+            {
+                "from": "100",
+                "color": "#ff0000"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 560,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e9037331a3dd83ca",
+        "type": "mqtt in",
+        "z": "a77dd866abe5aa76",
+        "name": "",
+        "topic": "plant2-moisture",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "c64421d17c651a0d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 660,
+        "wires": [
+            [
+                "d8b62494820458f4"
+            ]
+        ]
+    },
+    {
+        "id": "7c970fce7edec380",
+        "type": "mqtt in",
+        "z": "a77dd866abe5aa76",
+        "name": "",
+        "topic": "plant2-pir",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "c64421d17c651a0d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 720,
+        "wires": [
+            [
+                "d9c0c63c09adbf02"
+            ]
+        ]
+    },
+    {
+        "id": "69e82b21751d7785",
+        "type": "mqtt in",
+        "z": "a77dd866abe5aa76",
+        "name": "",
+        "topic": "plant1-pir",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "c64421d17c651a0d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 200,
+        "wires": [
+            [
+                "422350909a816edc"
+            ]
+        ]
+    },
+    {
+        "id": "d8b62494820458f4",
+        "type": "ui-gauge",
+        "z": "a77dd866abe5aa76",
+        "name": "Moisture",
+        "group": "50eda9a8d041e9bc",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Moisture",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#d65c5c"
+            },
+            {
+                "from": "35",
+                "color": "#00ff2a"
+            },
+            {
+                "from": "85",
+                "color": "#ea5353"
+            },
+            {
+                "from": "100",
+                "color": "#ff0000"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 560,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "6c313f92e09395d4",
+        "type": "ui-notification",
+        "z": "a77dd866abe5aa76",
+        "ui": "8a12bbfe7f8271e3",
+        "position": "top right",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "5",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Close",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "Notifications",
+        "x": 570,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5aa7368eeb177583",
+        "type": "mqtt out",
+        "z": "a77dd866abe5aa76",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "c64421d17c651a0d",
+        "x": 1110,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "142f8a731319a5e8",
+        "type": "ui-switch",
+        "z": "a77dd866abe5aa76",
+        "name": "Motor",
+        "label": "Motor",
+        "group": "bb0c6cf828f37306",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "plant1-motor",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 210,
+        "y": 300,
+        "wires": [
+            [
+                "ab9cd7a66adb870a"
+            ]
+        ]
+    },
+    {
+        "id": "78b83a4d4c5171f6",
+        "type": "ui-switch",
+        "z": "a77dd866abe5aa76",
+        "name": "Motor",
+        "label": "Motor",
+        "group": "50eda9a8d041e9bc",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "plant2-motor",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 210,
+        "y": 600,
+        "wires": [
+            [
+                "043180f4498a366f"
+            ]
+        ]
+    },
+    {
+        "id": "ab9cd7a66adb870a",
+        "type": "change",
+        "z": "a77dd866abe5aa76",
+        "name": "Plant1-motor",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "plant1-motor",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 300,
+        "wires": [
+            [
+                "5aa7368eeb177583"
+            ]
+        ]
+    },
+    {
+        "id": "043180f4498a366f",
+        "type": "change",
+        "z": "a77dd866abe5aa76",
+        "name": "Plant2-motor",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "plant2-motor",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "qos",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 600,
+        "wires": [
+            [
+                "5aa7368eeb177583"
+            ]
+        ]
+    },
+    {
+        "id": "24abe108a7c8f2f0",
+        "type": "mqtt in",
+        "z": "a77dd866abe5aa76",
+        "name": "NPK",
+        "topic": "npk",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "c64421d17c651a0d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 400,
+        "wires": [
+            [
+                "7ef028be63b4cb07"
+            ]
+        ]
+    },
+    {
+        "id": "7e0aca95b2984c6e",
+        "type": "mqtt in",
+        "z": "a77dd866abe5aa76",
+        "name": "Temperature",
+        "topic": "temp",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "c64421d17c651a0d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 460,
+        "wires": [
+            [
+                "a1465741ae984396"
+            ]
+        ]
+    },
+    {
+        "id": "7ef028be63b4cb07",
+        "type": "json",
+        "z": "a77dd866abe5aa76",
+        "name": "Convert_NPK",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 280,
+        "y": 400,
+        "wires": [
+            [
+                "b0aa0c2f195c664a"
+            ]
+        ]
+    },
+    {
+        "id": "b0aa0c2f195c664a",
+        "type": "function",
+        "z": "a77dd866abe5aa76",
+        "name": "Parse_Data",
+        "func": "return [\n    { payload: msg.payload.N },\n    { payload: msg.payload.P },\n    { payload: msg.payload.K }\n];",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 400,
+        "wires": [
+            [
+                "2b7982339515ae0b",
+                "b6fee216fb1f15d1",
+                "d44ba97e8d3338fb"
+            ]
+        ]
+    },
+    {
+        "id": "2b7982339515ae0b",
+        "type": "ui-gauge",
+        "z": "a77dd866abe5aa76",
+        "name": "Nitrogen",
+        "group": "bd0f844731381598",
+        "order": 1,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Nitrogen",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#d65c5c"
+            },
+            {
+                "from": "50",
+                "color": "#00ff2a"
+            },
+            {
+                "from": "150",
+                "color": "#ea5353"
+            }
+        ],
+        "min": 0,
+        "max": "200",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 660,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b6fee216fb1f15d1",
+        "type": "ui-gauge",
+        "z": "a77dd866abe5aa76",
+        "name": "Phosphorus",
+        "group": "bd0f844731381598",
+        "order": 3,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Phosphorus",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#d65c5c"
+            },
+            {
+                "from": "50",
+                "color": "#00ff2a"
+            },
+            {
+                "from": "150",
+                "color": "#ea5353"
+            }
+        ],
+        "min": 0,
+        "max": "200",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 670,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d44ba97e8d3338fb",
+        "type": "ui-gauge",
+        "z": "a77dd866abe5aa76",
+        "name": "Potassium",
+        "group": "bd0f844731381598",
+        "order": 2,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Potassium",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#d65c5c"
+            },
+            {
+                "from": "50",
+                "color": "#00ff2a"
+            },
+            {
+                "from": "150",
+                "color": "#ea5353"
+            }
+        ],
+        "min": 0,
+        "max": "200",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 670,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "a1465741ae984396",
+        "type": "ui-chart",
+        "z": "a77dd866abe5aa76",
+        "group": "bd0f844731381598",
+        "name": "Temperature",
+        "label": "Temperature",
+        "order": 4,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 270,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0c69f55f79fa8353",
+        "type": "ui-text",
+        "z": "a77dd866abe5aa76",
+        "group": "bb0c6cf828f37306",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Motion Detection",
+        "label": "Motion Detection",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "8b2ae9bd6c0ac993",
+        "type": "ui-text",
+        "z": "a77dd866abe5aa76",
+        "group": "50eda9a8d041e9bc",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Motion Detection",
+        "label": "Motion Detection",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "x": 590,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "d56da5844a7c1f92",
+        "type": "mqtt in",
+        "z": "a77dd866abe5aa76",
+        "name": "Motor1",
+        "topic": "plant1-motor",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "c64421d17c651a0d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 300,
+        "wires": [
+            [
+                "142f8a731319a5e8"
+            ]
+        ]
+    },
+    {
+        "id": "7555347a75ef2d81",
+        "type": "mqtt in",
+        "z": "a77dd866abe5aa76",
+        "name": "Motor2",
+        "topic": "plant2-motor",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "c64421d17c651a0d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 600,
+        "wires": [
+            [
+                "78b83a4d4c5171f6"
+            ]
+        ]
+    },
+    {
+        "id": "4a6557d3257f03bc",
+        "type": "mqtt in",
+        "z": "a77dd866abe5aa76",
+        "name": "Notifications",
+        "topic": "plant-notification",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "c64421d17c651a0d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 860,
+        "wires": [
+            [
+                "6c313f92e09395d4"
+            ]
+        ]
+    },
+    {
+        "id": "6ac5894bfbeab111",
+        "type": "mqtt in",
+        "z": "a77dd866abe5aa76",
+        "name": "Humidity",
+        "topic": "humidity",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "c64421d17c651a0d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 60,
+        "y": 520,
+        "wires": [
+            [
+                "98e2a413d1183c22"
+            ]
+        ]
+    },
+    {
+        "id": "98e2a413d1183c22",
+        "type": "ui-chart",
+        "z": "a77dd866abe5aa76",
+        "group": "bd0f844731381598",
+        "name": "Humidity",
+        "label": "Humidity",
+        "order": 5,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 260,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "422350909a816edc",
+        "type": "function",
+        "z": "a77dd866abe5aa76",
+        "name": "Transform",
+        "func": "if (msg.payload === 1) {\n    msg.payload = \"Motion Detected\";\n} else {\n    msg.payload = \"No Motion\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 200,
+        "wires": [
+            [
+                "0c69f55f79fa8353",
+                "6c313f92e09395d4"
+            ]
+        ]
+    },
+    {
+        "id": "d9c0c63c09adbf02",
+        "type": "function",
+        "z": "a77dd866abe5aa76",
+        "name": "Transform",
+        "func": "if (msg.payload === 1) {\n    msg.payload = \"Motion Detected\";\n} else {\n    msg.payload = \"No Motion\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 720,
+        "wires": [
+            [
+                "8b2ae9bd6c0ac993",
+                "6c313f92e09395d4"
+            ]
+        ]
+    },
+    {
+        "id": "c64421d17c651a0d",
+        "type": "mqtt-broker",
+        "name": "Mosquitto MQTT Broker",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "bb0c6cf828f37306",
+        "type": "ui-group",
+        "name": "Plant1",
+        "page": "29f7285db9c228ea",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "50eda9a8d041e9bc",
+        "type": "ui-group",
+        "name": "Plant2",
+        "page": "29f7285db9c228ea",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "8a12bbfe7f8271e3",
+        "type": "ui-base",
+        "name": "MQTT-Based-Plant-Watering",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "bd0f844731381598",
+        "type": "ui-group",
+        "name": "General_Data",
+        "page": "29f7285db9c228ea",
+        "width": 12,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "29f7285db9c228ea",
+        "type": "ui-page",
+        "name": "Home",
+        "ui": "8a12bbfe7f8271e3",
+        "path": "/home",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "5d147e87f0efd102",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "5d147e87f0efd102",
+        "type": "ui-theme",
+        "name": "MQTT-Based-Plant-Watering Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    }
+]
