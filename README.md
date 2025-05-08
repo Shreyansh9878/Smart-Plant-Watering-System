@@ -96,7 +96,6 @@ To automate plant health monitoring and irrigation using low-cost IoT components
 
 ---
 
-## 📸 Demo / Images
-
+## 📸 Dashboard
 ![Screenshot 2025-05-08 114009](https://github.com/user-attachments/assets/0a14f44e-81ae-43e7-bba6-eddfe0c5e25d)
 
